@@ -49,6 +49,7 @@ const baseValidations = {
   schemasDigest: yupString()
     .strict()
     .required(),
+  ref: yupString().strict(),
 }
 
 export const validatePluginOptions = (

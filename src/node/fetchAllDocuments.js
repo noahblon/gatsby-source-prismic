@@ -31,14 +31,14 @@ const pagedGet = async (
 }
 
 export const fetchAllDocuments = async (gatsbyContext, pluginOptions) => {
-  const { repositoryName, accessToken, fetchLinks, lang } = pluginOptions
+  const { repositoryName, accessToken, fetchLinks, lang, ref } = pluginOptions
 
   const apiEndpoint = `https://${repositoryName}.prismic.io/api/v2`
   const client = await Prismic.api(apiEndpoint, { accessToken })
 
   return await pagedGet(
     client,
-    { fetchLinks, lang },
+    { fetchLinks, lang, ref },
     {
       gatsbyContext,
       pluginOptions,
